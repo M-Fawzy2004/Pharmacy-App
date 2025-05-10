@@ -35,7 +35,9 @@ class OrderItem extends StatelessWidget {
               SlidableAction(
                 autoClose: true,
                 onPressed: (context) {
-                  context.read<CartCubit>().removeProduct(cartEntity);
+                  context
+                      .read<CartCubit>()
+                      .removeProduct(cartEntity.productModel);
                 },
                 icon: Icons.delete,
                 label: 'حذف',

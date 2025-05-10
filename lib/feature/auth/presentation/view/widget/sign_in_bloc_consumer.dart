@@ -31,7 +31,7 @@ class SignInBlocConsumer extends StatelessWidget {
         if (state is SignInFailure) {
           ScaffoldMessenger.of(context).showSnackBar(
             buildSnakBarError(
-              state.message,
+              'حدث خطاء في تسجيل الدخول',
             ),
           );
         }

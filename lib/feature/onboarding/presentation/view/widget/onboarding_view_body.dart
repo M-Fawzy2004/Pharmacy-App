@@ -14,15 +14,23 @@ class OnboardingViewBody extends StatefulWidget {
 }
 
 class _OnboardingViewBodyState extends State<OnboardingViewBody> {
+  // controller for page view
   final PageController _controller = PageController();
 
+  // current page
   int currentPage = 0;
 
+  // init state
+  // دالة يتم استدعاؤها مرة واحدة عند إنشاء الـ State لأول مرة، قبل أن تُبنى واجهة المستخدم.
   @override
   void initState() {
+    // من المهم استدعاء الدالة الأصلية لتضمن عمل التهيئة بشكل صحيح في كلاس الأب.
     super.initState();
+    // يضيف مستمعًا للتغييرات في الـ controller (مثل الانتقال بين الصفحات).
     _controller.addListener(() {
+      // يُستخدم لتحديث واجهة المستخدم عندما تتغير بيانات State.
       setState(() {
+        //يأخذ رقم الصفحة الحالية من الـ PageController ويقربه (لأنه يكون double غالبًا)، ثم يخزن القيمة في currentPage (وهي متغير يُفترض أنه معرف مسبقًا في الكلاس).
         currentPage = _controller.page!.round();
       });
     });
@@ -48,8 +56,9 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
           ),
         ),
 
+        // Start Button
         Positioned(
-          bottom: 70,
+          bottom: 50,
           left: 0,
           right: 0,
           child: AnimatedOpacity(

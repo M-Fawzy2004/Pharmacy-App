@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pharmacy_app/constant.dart';
+import 'package:pharmacy_app/core/helper/app_styles.dart';
 import 'package:pharmacy_app/core/helper/custom_snak_bar.dart';
 import 'package:pharmacy_app/core/utils/assets.dart';
 import 'package:pharmacy_app/core/widget/custom_button.dart';
-import 'package:pharmacy_app/core/widget/product_view_header.dart';
 import 'package:pharmacy_app/feature/auth/presentation/manager/sign_up/sign_up_cubit.dart';
 import 'package:pharmacy_app/feature/auth/presentation/view/sign_in_view.dart';
 import 'package:pharmacy_app/core/widget/custom_form_text_field.dart';
@@ -42,22 +43,26 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
           children: [
             // size box height
             SizedBox(
-              height: screenHeight * .02,
-            ),
-
-            // icon back
-            ProductViewHeader(
-              isNotfication: true,
-              title: '',
-            ),
-
-            // size box height
-            SizedBox(
               height: screenHeight * .015,
             ),
 
             // logo
-            Image.asset(Assets.imagesLogoblue),
+            Image.asset(
+              Assets.imagesImagesRemovebgPreview,
+              color: kBlueColor,
+              height: 100,
+            ),
+
+            // size box height
+            SizedBox(
+              height: screenHeight * .05,
+            ),
+
+            // text
+            Text(
+              'تسجيل الدخول',
+              style: Styles.fontText20(context),
+            ),
 
             // size box height
             SizedBox(

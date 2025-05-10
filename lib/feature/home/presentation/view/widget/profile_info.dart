@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pharmacy_app/constant.dart';
 import 'package:pharmacy_app/core/helper/app_styles.dart';
+import 'package:pharmacy_app/core/widget/custom_button.dart';
 import 'package:pharmacy_app/core/widget/custom_form_text_field.dart';
 
 class ProfileInfo extends StatefulWidget {
@@ -74,6 +75,9 @@ class _ProfileInfoState extends State<ProfileInfo> {
         SizedBox(
           height: screenHeight * 0.01,
         ),
+
+        // custom button
+        CustomButton(text: 'حفظ', onTap: () {}),
       ],
     );
   }

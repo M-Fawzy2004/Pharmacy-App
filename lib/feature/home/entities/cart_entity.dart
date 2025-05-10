@@ -42,5 +42,4 @@ class CartEntity {
       count: 1,
     );
   }
-
 }

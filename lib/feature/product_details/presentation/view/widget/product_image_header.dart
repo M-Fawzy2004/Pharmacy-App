@@ -34,15 +34,13 @@ class ProductImageHeader extends StatelessWidget {
               shape: BoxShape.circle,
               color: kBlueColor,
             ),
-            child: FittedBox(
-              child: IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: Icon(
-                  Icons.arrow_back_ios_new_outlined,
-                  color: Colors.white,
-                ),
+            child: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: Icon(
+                Icons.arrow_back_ios_new_outlined,
+                color: Colors.white,
               ),
             ),
           ),
@@ -55,13 +53,11 @@ class ProductImageHeader extends StatelessWidget {
                 shape: BoxShape.circle,
                 color: kBlueColor,
               ),
-              child: FittedBox(
-                child: IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.favorite_border_outlined,
-                    color: Colors.white,
-                  ),
+              child: IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.favorite_border_outlined,
+                  color: Colors.white,
                 ),
               ),
             ),

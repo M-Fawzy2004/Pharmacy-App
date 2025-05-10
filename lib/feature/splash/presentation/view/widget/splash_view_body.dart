@@ -16,6 +16,7 @@ class SplashViewBody extends StatefulWidget {
 }
 
 class _SplashViewBodyState extends State<SplashViewBody> {
+  // init state
   @override
   void initState() {
     super.initState();
@@ -25,10 +26,12 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
   @override
   Widget build(BuildContext context) {
+    // center image
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          // logo image
           Image.asset(
             Assets.imagesImagesRemovebgPreview,
             color: kBlueColor,
@@ -40,13 +43,17 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
   // method navgation
   void excuteNavgation() {
+    // wait 3 seconds تأخير 3 ثواني
     Future.delayed(
       const Duration(seconds: 3),
       () {
+        // check login or not
         var isLogin = AuthRepositoryImpl(Supabase.instance.client).isLoggedIn();
         if (isLogin) {
+          // login then navgation to main view
           Navigator.pushReplacementNamed(context, MainView.routeName);
         } else {
+          // not login then navgation to onboarding view
           Navigator.pushReplacementNamed(context, OnboardingView.routeName);
         }
       },

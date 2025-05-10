@@ -5,14 +5,14 @@ import 'package:pharmacy_app/feature/home/data/model/product_model.dart';
 class CartItemEntity extends Equatable {
   final ProductModel productModel;
   int count;
-
-  CartItemEntity({required this.productModel, this.count = 0});
-
+  
+  CartItemEntity({required this.productModel, this.count = 1});
+  
   num calculateTotalPrice() => productModel.price * count;
   num calculateTotalWeight() => productModel.amountItem * count;
   incrasedCount() => count++;
   decreasedCount() => count--;
-
+  
   @override
-  List<Object?> get props => [productModel];
+  List get props => [productModel];
 }

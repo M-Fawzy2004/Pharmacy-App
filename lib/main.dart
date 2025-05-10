@@ -11,14 +11,19 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
+  // initialize supabase
   WidgetsFlutterBinding.ensureInitialized();
   await Supabase.initialize(
     url: kSupbaseUrl,
     anonKey: kSupbaseAnonKey,
   );
+  // initialize bloc observer
   Bloc.observer = CustomBlocObserver();
+  // initialize getIt
   setupGetIt();
+  // run app
   runApp(
+    // DevicePreview to see app in different devices
     DevicePreview(
       enabled: false,
       builder: (context) => PharmacyApp(),
@@ -26,11 +31,13 @@ void main() async {
   );
 }
 
+// main app
 class PharmacyApp extends StatelessWidget {
   const PharmacyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // status bar
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
@@ -38,6 +45,7 @@ class PharmacyApp extends StatelessWidget {
         statusBarBrightness: Brightness.light,
       ),
     );
+    // material app with localization arabic
     return MaterialApp(
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
@@ -47,12 +55,16 @@ class PharmacyApp extends StatelessWidget {
       supportedLocales: [
         Locale('ar', 'EG'),
       ],
+      // theme app with white background and cairo font
       theme: ThemeData(
         fontFamily: 'cairo',
         scaffoldBackgroundColor: Colors.white,
       ),
+      // debug show checked mode banner
       debugShowCheckedModeBanner: false,
+      // routes
       onGenerateRoute: onGenerateRoute,
+      // initial route
       initialRoute: SplashView.routeName,
     );
   }

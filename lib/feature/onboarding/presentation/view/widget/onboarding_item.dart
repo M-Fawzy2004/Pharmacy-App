@@ -25,14 +25,11 @@ class OnboardingItem extends StatelessWidget {
           right: 0,
           left: 0,
           child: Center(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Image.asset(
-                personImage,
-                width: 500,
-                height: 500,
-                fit: BoxFit.fill,
-              ),
+            child: Image.asset(
+              personImage,
+              width: 500,
+              height: 500,
+              fit: BoxFit.fill,
             ),
           ),
         ),

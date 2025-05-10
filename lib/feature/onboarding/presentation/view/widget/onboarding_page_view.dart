@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pharmacy_app/core/utils/assets.dart';
 import 'package:pharmacy_app/feature/onboarding/presentation/view/widget/onboarding_item.dart';
 
+// stateful widget to control page view in onboarding
 class OnboardingPageView extends StatefulWidget {
   const OnboardingPageView({
     super.key,
@@ -15,6 +16,7 @@ class OnboardingPageView extends StatefulWidget {
 }
 
 class _OnboardingPageViewState extends State<OnboardingPageView> {
+  // list of categories
   List categories = [
     {
       "title":

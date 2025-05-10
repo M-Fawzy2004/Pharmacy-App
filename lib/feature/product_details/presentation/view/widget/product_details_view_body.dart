@@ -49,7 +49,6 @@ class ProductDetailsViewBody extends StatelessWidget {
         ),
         AddToCartBar(
           productModel: productModel,
-          cartItemEntity: cartItemEntity,
         ),
       ],
     );

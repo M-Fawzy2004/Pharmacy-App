@@ -5,9 +5,9 @@ import 'package:pharmacy_app/feature/home/presentation/view/widget/cart_view_bod
 
 class CartView extends StatelessWidget {
   const CartView({super.key});
-
+  
   static const routeName = '/order';
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

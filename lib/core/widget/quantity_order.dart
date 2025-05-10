@@ -15,31 +15,25 @@ class QuantityOrder extends StatelessWidget {
     return BlocBuilder<CartItemCubit, CartItemState>(
       builder: (context, state) {
         return Container(
-          padding: const EdgeInsets.all(5),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             color: kBlueColor,
           ),
           child: Row(
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: Color(0xff41414F),
-                  shape: BoxShape.circle,
-                ),
-                child: FittedBox(
-                  child: IconButton(
-                    onPressed: () {
-                      if (cartItemEntity.count > 1) {
-                        cartItemEntity.decreasedCount();
-                        context
-                            .read<CartItemCubit>()
-                            .updateCartItem(cartItemEntity);
-                      }
-                    },
-                    icon: Icon(Icons.remove),
-                    color: Colors.white,
-                  ),
+              // remove
+              FittedBox(
+                child: IconButton(
+                  onPressed: () {
+                    if (cartItemEntity.count > 1) {
+                      cartItemEntity.decreasedCount();
+                      context
+                          .read<CartItemCubit>()
+                          .updateCartItem(cartItemEntity);
+                    }
+                  },
+                  icon: Icon(Icons.remove),
+                  color: Colors.white,
                 ),
               ),
 
@@ -53,22 +47,14 @@ class QuantityOrder extends StatelessWidget {
               ),
 
               // add
-              Container(
-                decoration: BoxDecoration(
-                  color: Color(0xff41414F),
-                  shape: BoxShape.circle,
-                ),
-                child: IconButton(
-                  onPressed: () {
-                    cartItemEntity.incrasedCount();
-                    context
-                        .read<CartItemCubit>()
-                        .updateCartItem(cartItemEntity);
-                  },
-                  icon: Icon(
-                    Icons.add,
-                    color: Colors.white,
-                  ),
+              IconButton(
+                onPressed: () {
+                  cartItemEntity.incrasedCount();
+                  context.read<CartItemCubit>().updateCartItem(cartItemEntity);
+                },
+                icon: Icon(
+                  Icons.add,
+                  color: Colors.white,
                 ),
               ),
             ],

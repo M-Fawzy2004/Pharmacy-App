@@ -4,11 +4,14 @@ import 'package:pharmacy_app/feature/onboarding/presentation/view/widget/onboard
 class OnboardingView extends StatelessWidget {
   const OnboardingView({super.key});
 
+  // route name to navigate
   static const routeName = '/onboarding';
 
   @override
   Widget build(BuildContext context) {
+    // scaffold
     return Scaffold(
+      // body
       body: OnboardingViewBody(),
     );
   }
